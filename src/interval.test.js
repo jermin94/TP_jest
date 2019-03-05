@@ -114,4 +114,4 @@ describe("Includes interval", function(){
         let interval2 = new Interval(11,20)
         expect(interval1.includes(interval2)).toEqual(false);
     })    
-});    
+});
