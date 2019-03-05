@@ -114,6 +114,7 @@ describe("Includes interval", function(){
         let interval2 = new Interval(11,20)
         expect(interval1.includes(interval2)).toEqual(false);
     })    
+
 });
 
 describe("Union interval", function(){
@@ -140,3 +141,4 @@ describe("Union interval", function(){
       expect(union.toString()).toBe('[-15,-5],[1,10]');
     });
 });  
+});
