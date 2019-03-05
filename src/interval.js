@@ -26,6 +26,7 @@ class Interval {
         return this.end > interval.start && this.start < interval.end;
     }
 
+    
     /**
      * Retourne true si cet interval contient le paramètre interval
      *
@@ -63,16 +64,7 @@ class Interval {
      * @returns {Interval[]}
      */
     union(interval) {
-        if (this.overlaps(interval)) {
-            return [
-                new Interval(
-                  Math.min(this.start, interval.start),
-                  Math.max(this.end, interval.end)
-                )
-              ];
-            } else {
-              return this.start < interval.start ? [this, interval] : [interval, this];
-        }
+
     };
 
     /**

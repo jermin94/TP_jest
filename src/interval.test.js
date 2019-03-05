@@ -115,28 +115,3 @@ describe("Includes interval", function(){
         expect(interval1.includes(interval2)).toEqual(false);
     })    
 });
-
-describe("Union interval", function(){
-
-    interval = new Interval(1, 10);
-
-    it('Union test case 1', function(){
-      let union = interval.union(new Interval(5, 15));
-      expect(union.toString()).toBe('[1,15]');
-    });
-
-    it('Union test case 2', function(){
-      let union = interval.union(new Interval(-5, 5));
-      expect(union.toString()).toBe('[-5,10]');
-    });
-
-    it('Union test case 3', function(){
-      let union = interval.union(new Interval(15, 25));
-      expect(union.toString()).toBe('[1,10],[15,25]');
-    });
-
-    it('Union test case 4', function(){
-      let union = interval.union(new Interval(-15, -5));
-      expect(union.toString()).toBe('[-15,-5],[1,10]');
-    });
-});  
