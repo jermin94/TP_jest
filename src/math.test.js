@@ -80,3 +80,28 @@ describe("SumPrime", function(){
         expect(f).toThrow('Impossible d\'utiliser la fonction si c\'est un entier');
     })
 });
+
+
+describe("FizzBuzz", function(){
+
+    var tabExample = [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"];
+    it("Doit retourné " + tabExample + " quand n = 15", function(){
+        var result = Util.fizzBuzz(15);
+        expect(result).toEqual(tabExample);
+    });
+
+
+    it("Si n < 0", function(){
+        var f = function(){
+            Util.fizzBuzz(-1);
+        }
+        expect(f).toThrow('Si n < 0');
+    });
+
+    it("Impossible d\'utiliser la fonction si c\'est un entier", function(){
+        var f = function(){
+            Util.fizzBuzz('test');
+        }
+        expect(f).toThrow('Impossible d\'utiliser la fonction si c\'est un entier');
+    })
+});

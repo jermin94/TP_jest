@@ -92,11 +92,11 @@ Util.sumPrime = function(n) {
  */
 Util.fizzBuzz = function(n) {
     if (n < 0) {
-        throw 'Unable to compute sumPrime for n < 0'
+        throw 'Si n < 0'
     }
 
     if (!(typeof n === "number") || Math.floor(n) !== n) {
-        throw 'Unable to compute sumPrime of non integer values'
+        throw 'Impossible d\'utiliser la fonction si c\'est un entier'
     }
 
     var tab = [];
@@ -132,22 +132,7 @@ Util.fizzBuzz = function(n) {
  * @returns {string}
  */
 Util.cipher = function (phrase) {
-     if (!(typeof phrase === "string") || /\d/.test(phrase)) {
-        throw 'Unable to compute cipher of string values'
-    }
-
-    var newPhrase = "";
-    for(var i = 0 ; i < phrase.length ; i++)
-    {
-        switch (phrase.charAt(i).charCodeAt(0))
-        {
-            case 90: newPhrase+='A';
-            case 122: newPhrase+='a';
-            case ' '.charCodeAt(0): newPhrase+=' ';
-            default: newPhrase+=String.fromCharCode(phrase.charAt(i).charCodeAt(0) + 1);
-        }
-    }
-    return newPhrase;
+     
 };
 
 
