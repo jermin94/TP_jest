@@ -44,7 +44,7 @@ class Interval {
      * @returns {boolean}
      */
     includes(interval) {
-
+        
     };
 
     /**

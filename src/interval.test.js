@@ -68,6 +68,7 @@ describe("Overlaps interval", function(){
         let interval2 = new Interval(1,10)
         expect(interval1.overlaps(interval2)).toEqual(true);
     })
+    
 });
 
     
