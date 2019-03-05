@@ -62,5 +62,13 @@ describe("Overlaps interval", function(){
         let interval2 = new Interval(11,8)
         expect(interval1.overlaps(interval2)).toEqual(false);
     })
+
+    it("Overlaps test case 10", function(){
+        let interval1 = new Interval(1,10)
+        let interval2 = new Interval(1,10)
+        expect(interval1.overlaps(interval2)).toEqual(true);
+    })
+    
 });
+
     
