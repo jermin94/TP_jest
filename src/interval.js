@@ -92,8 +92,14 @@ class Interval {
      * @returns {Interval|null}
      */
     intersection(interval) {
-
-    };
+        if (this.overlaps(interval)) {
+          return new Interval(
+            interval.start > this.start ? interval.start : this.start,
+            interval.end < this.end ? interval.end : this.end
+          );
+        }
+        return null;
+    }
 
     /**
      * Retourne l'exclusion de deux intervals

@@ -1,4 +1,5 @@
 const Interval = require('./interval');
+interval = new Interval(1, 10);
 
 describe("Overlaps interval", function(){
 
@@ -118,8 +119,6 @@ describe("Includes interval", function(){
 
 describe("Union interval", function(){
 
-    interval = new Interval(1, 10);
-
     it('Union test case 1', function(){
       let union = interval.union(new Interval(5, 15));
       expect(union.toString()).toBe('[1,15]');
@@ -140,3 +139,31 @@ describe("Union interval", function(){
       expect(union.toString()).toBe('[-15,-5],[1,10]');
     });
 });  
+
+describe('Intersection interval', function(){
+    
+    it("Interval test case 1", function(){
+      let intersection = interval.intersection(new Interval(15, 25));
+      expect(intersection).toEqual(null);
+    });
+
+    it('Interval test case 2', function(){
+      let intersection = interval.intersection(new Interval(5, 25));
+      expect(intersection).toEqual(new Interval(5, 10));
+    });
+
+    it('Interval test case 3', function(){
+      let intersection = interval.intersection(new Interval(-5, 3));
+      expect(intersection).toEqual(new Interval(1, 3));
+    });
+
+    it('Interval test case 4', function(){
+      let intersection = interval.intersection(new Interval(-5, 25));
+      expect(intersection).toEqual(new Interval(1, 10));
+    });
+
+    it('Interval test case 5', function(){
+      let intersection = interval.intersection(new Interval(3, 6));
+      expect(intersection).toEqual(new Interval(3, 6));
+    });
+});
