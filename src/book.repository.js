@@ -18,22 +18,22 @@ class BookRepository {
      * Nombre total de livre
      */
     getTotalCount() {
-
+        return this.db.get('books').value().length;
     }
 
     /**
      * Somme du prix de tous les livre
      */
     getTotalPrice() {
-
+        return this.db.get('books').map('price').sum().value();
     }
 
 
     /**
      * Retourne un livre
      */
-    getBookByName(bookName) {
-
+    getBookByName(name) {
+        return this.db.find({ name }).value();
     }
 
     /**
@@ -55,8 +55,8 @@ class BookRepository {
      *      ....
      *  ]
      */
-    getCountBookAddedByMont(bookName) {
-
+    getCountBookAddedByMont(name) {
+        return this.db.countBy(['year', 'month']).value();
     }
 
 }
